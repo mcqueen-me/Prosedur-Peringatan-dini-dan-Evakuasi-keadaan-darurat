@@ -1,0 +1,8 @@
+[build]
+  publish = "."
+
+# Keep the old file URL working
+[[redirects]]
+  from = "/Prosedur%20peringatan%20dini%20dan%20evakuasi%20keadaan%20darurat.html"
+  to = "/"
+  status = 301
