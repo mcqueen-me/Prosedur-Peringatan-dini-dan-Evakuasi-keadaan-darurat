@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -158,8 +159,78 @@ footer a{color:#fff}
   body{background:#fff}
 }
 </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Siaga Bencana &amp; Evakuasi Darurat | Desa Tobadak - Mamuju Tengah</title>
+  <meta name="description" content="Pusat panduan interaktif peringatan dini dan prosedur evakuasi darurat gempa bumi, banjir, tanah longsor, dan kebakaran. Pemerintah Desa Tobadak, Kabupaten Mamuju Tengah.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🛟%3C/text%3E%3C/svg%3E">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Bricolage Grotesque -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            display: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            hazard: {
+              yellow: '#F59E0B',
+              red: '#DC2626',
+              amber: '#D97706',
+              blue: '#0284C7',
+              earth: '#854D0E',
+            }
+          },
+          boxShadow: {
+            'brutal': '4px 4px 0px 0px rgba(0,0,0,1)',
+            'brutal-sm': '2px 2px 0px 0px rgba(0,0,0,1)',
+            'brutal-danger': '4px 4px 0px 0px #DC2626',
+            'brutal-yellow': '4px 4px 0px 0px #F59E0B',
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Custom hazard striping */
+    .hazard-stripe {
+      background: repeating-linear-gradient(-45deg, #F59E0B 0 14px, #0F172A 14px 28px);
+    }
+    .hazard-stripe-red {
+      background: repeating-linear-gradient(-45deg, #DC2626 0 14px, #450A0A 14px 28px);
+    }
+    /* Pulse ring for SOS */
+    @keyframes pulseRing {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 12px rgba(220, 38, 38, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+    }
+    .sos-pulse {
+      animation: pulseRing 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+    }
+    /* Smooth card tab transition */
+    .tab-content {
+      transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #0f172a; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #475569; }
+  </style>
 </head>
 <body>
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen flex flex-col selection:bg-amber-400 selection:text-slate-950 antialiased">
 
 <header class="bar">
   <div class="wrap">
@@ -167,6 +238,62 @@ footer a{color:#fff}
     <a class="sos" href="tel:085142847902" aria-label="Telepon darurat BPBD">📞 <span>Darurat: </span>BPBD</a>
   </div>
 </header>
+  <!-- TOP HAZARD BANNER -->
+  <div class="hazard-stripe h-2.5 w-full"></div>
+
+  <!-- STICKY TOP APP BAR -->
+  <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 shadow-lg">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+      
+      <!-- Brand & Status -->
+      <a href="#" class="flex items-center gap-2.5 group">
+        <div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 font-extrabold text-xl group-hover:scale-105 transition-transform shadow-inner">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-display font-extrabold text-base sm:text-lg tracking-tight text-white group-hover:text-amber-400 transition-colors">
+              Siaga Bencana
+            </span>
+            <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping mr-1"></span>Aktif
+            </span>
+          </div>
+          <p class="text-xs text-slate-400 hidden sm:block">Pemerintah Desa Tobadak · Mamuju Tengah</p>
+        </div>
+      </a>
+
+      <!-- Quick Action Controls -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Sirene / Kentongan Toggle Trigger -->
+        <button id="btnOpenAudioModal" title="Bunyikan Alarm / Kentongan Simulasi" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-semibold border border-slate-700 hover:border-slate-600 transition-all focus:ring-2 focus:ring-amber-400 outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 8a6 6 0 010 8m-2-6a3 3 0 010 4" />
+          </svg>
+          <span class="hidden md:inline">Alarm &amp; Kentongan</span>
+          <span class="md:hidden">Alarm</span>
+        </button>
+
+        <!-- Bagikan Lokasi GPS Modal Trigger -->
+        <button id="btnOpenLocationModal" title="Kirim Titik GPS ke Tim Evakuasi" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-200 text-xs sm:text-sm font-semibold border border-sky-800 transition-all focus:ring-2 focus:ring-sky-400 outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          <span class="hidden md:inline">Kirim GPS Darurat</span>
+          <span class="md:hidden">GPS</span>
+        </button>
+
+        <!-- Direct Call BPBD (Emergency Red Button) -->
+        <a href="tel:085142847902" class="sos-pulse inline-flex items-center gap-1.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs sm:text-sm shadow-lg shadow-red-900/50 transition-all active:scale-95">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+          <span>SOS <span class="hidden sm:inline">BPBD</span></span>
+        </a>
+      </div>
 
 <main>
 <div class="hero">
@@ -216,7 +343,667 @@ footer a{color:#fff}
           <li>Di pesisir dan terasa kuat: segera ke dataran tinggi tanpa menunggu peringatan.</li>
         </ol></div>
     </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="flex-grow">
+
+    <!-- HERO SECTION -->
+    <section class="relative overflow-hidden pt-8 pb-12 sm:pt-14 sm:pb-16 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 border-b border-slate-800">
+      <!-- Glow & Grid Decors -->
+      <div class="absolute inset-0 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:24px_24px] opacity-25 pointer-events-none"></div>
+      <div class="absolute -top-24 right-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 left-0 w-96 h-96 bg-red-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+        <!-- Badges -->
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/90 border border-slate-700/80 text-xs sm:text-sm text-slate-300 mb-4 sm:mb-6 shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+          <span>SOP Evakuasi &amp; Peringatan Dini Warga</span>
+          <span class="text-slate-500">•</span>
+          <span class="font-semibold text-amber-300">Desa Tobadak</span>
   </div>
+        </div>
+
+        <!-- Headline & Lead -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-8">
+            <h1 class="font-display font-extrabold text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.1] mb-4">
+              Kenali langkah pertama, <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-200 to-red-400">selamatkan nyawa.</span>
+            </h1>
+            <p class="text-slate-300 text-base sm:text-lg lg:text-xl max-w-2xl font-normal leading-relaxed">
+              Panduan tanggap darurat resmi untuk warga Desa Tobadak saat menghadapi gempa bumi, banjir luapan, tanah longsor, dan kebakaran pemukiman.
+            </p>
+          </div>
+
+          <!-- Quick Emergency Stats / Status Card -->
+          <div class="lg:col-span-4 bg-slate-900/80 border border-slate-800 rounded-2xl p-5 shadow-xl backdrop-blur-sm">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800 text-xs font-semibold text-slate-400">
+              <span>SALURAN RESPON CEPAT</span>
+              <span class="text-emerald-400 font-mono flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>24 JAM</span>
+            </div>
+            <div class="mt-3 space-y-2.5">
+              <div class="flex items-center justify-between text-sm">
+                <span class="text-slate-300">BPBD Mamuju Tengah</span>
+                <a href="tel:085142847902" class="font-mono font-bold text-amber-400 hover:underline">0851-4284-7902</a>
+              </div>
+              <div class="flex items-center justify-between text-sm">
+                <span class="text-slate-300">Damkar Tobadak</span>
+                <a href="tel:085342349683" class="font-mono font-bold text-red-400 hover:underline">0853-4234-9683</a>
+              </div>
+              <div class="flex items-center justify-between text-sm">
+                <span class="text-slate-300">Ambulans Emergency</span>
+                <a href="tel:119" class="font-mono font-bold text-sky-400 hover:underline">119</a>
+              </div>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center gap-2 text-xs text-slate-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-amber-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Ketuk nomor untuk panggilan telepon instan.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SEARCH / FILTER BAR -->
+        <div class="mt-8 max-w-2xl">
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </div>
+            <input type="text" id="searchInput" placeholder="Cari langkah darurat... (misal: listrik, gas bocor, meja, air sungai, pesisir)" 
+              class="w-full pl-11 pr-10 py-3.5 bg-slate-900 border border-slate-700/80 rounded-xl text-slate-100 placeholder-slate-400 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400 shadow-inner transition-all">
+            <button id="btnClearSearch" class="hidden absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-slate-200">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+          <div id="searchMatchNotice" class="hidden mt-2 text-xs text-amber-300 font-medium flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+            <span id="searchMatchCount">Menampilkan hasil pencarian...</span>
+          </div>
+        </div>
+
+        <!-- INTERACTIVE DISASTER PICKER TABS -->
+        <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4" id="disasterPicker">
+          <!-- Gempa Button -->
+          <button type="button" data-target="gempa" class="disaster-tab-btn active text-left p-4 rounded-xl border-2 transition-all duration-200 relative overflow-hidden group focus:outline-none bg-amber-950/40 border-amber-500 text-white shadow-lg shadow-amber-950/30">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-2xl sm:text-3xl p-2 rounded-lg bg-amber-500/20 text-amber-400 border border-amber-500/30">🏚️</span>
+              <span class="active-indicator text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-amber-500 text-slate-950 font-sans">Aktif</span>
+            </div>
+            <h3 class="font-display font-bold text-base sm:text-lg text-white">Gempa Bumi</h3>
+            <p class="text-xs text-amber-200/80 mt-1 line-clamp-1">Rendah, Lindungi, Bertahan</p>
+          </button>
+
+          <!-- Banjir Button -->
+          <button type="button" data-target="banjir" class="disaster-tab-btn text-left p-4 rounded-xl border-2 transition-all duration-200 relative overflow-hidden group focus:outline-none bg-slate-900 border-slate-800 text-slate-300 hover:border-sky-500/50 hover:bg-slate-850">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-2xl sm:text-3xl p-2 rounded-lg bg-sky-500/20 text-sky-400 border border-sky-500/30">🌊</span>
+              <span class="active-indicator hidden text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-sky-500 text-slate-950 font-sans">Aktif</span>
+            </div>
+            <h3 class="font-display font-bold text-base sm:text-lg text-white">Banjir Luapan</h3>
+            <p class="text-xs text-slate-400 mt-1 line-clamp-1">Matikan Listrik, Mengungsi</p>
+          </button>
+
+          <!-- Longsor Button -->
+          <button type="button" data-target="longsor" class="disaster-tab-btn text-left p-4 rounded-xl border-2 transition-all duration-200 relative overflow-hidden group focus:outline-none bg-slate-900 border-slate-800 text-slate-300 hover:border-amber-600/50 hover:bg-slate-850">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-2xl sm:text-3xl p-2 rounded-lg bg-amber-800/30 text-amber-500 border border-amber-700/40">⛰️</span>
+              <span class="active-indicator hidden text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-amber-600 text-slate-950 font-sans">Aktif</span>
+            </div>
+            <h3 class="font-display font-bold text-base sm:text-lg text-white">Tanah Longsor</h3>
+            <p class="text-xs text-slate-400 mt-1 line-clamp-1">Lari Menjauh ke Samping</p>
+          </button>
+
+          <!-- Kebakaran Button -->
+          <button type="button" data-target="api" class="disaster-tab-btn text-left p-4 rounded-xl border-2 transition-all duration-200 relative overflow-hidden group focus:outline-none bg-slate-900 border-slate-800 text-slate-300 hover:border-red-500/50 hover:bg-slate-850">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-2xl sm:text-3xl p-2 rounded-lg bg-red-500/20 text-red-400 border border-red-500/30">🔥</span>
+              <span class="active-indicator hidden text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-red-500 text-white font-sans">Aktif</span>
+            </div>
+            <h3 class="font-display font-bold text-base sm:text-lg text-white">Kebakaran</h3>
+            <p class="text-xs text-slate-400 mt-1 line-clamp-1">Keluar Segera, Telepon Damkar</p>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: PANDUAN PROSEDUR & MODE AKSI DARURAT -->
+    <section id="panduan" class="py-12 sm:py-16 max-w-6xl mx-auto px-4 sm:px-6">
+
+      <!-- View Mode Controls (Tampilan Panduan vs Mode Aksi Cepat) -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-4 border-b border-slate-800">
+        <div>
+          <div class="flex items-center gap-2">
+            <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-white tracking-tight">
+              Prosedur Tanggap Bencana
+            </h2>
+          </div>
+          <p class="text-sm text-slate-400 mt-1">Langkah terstruktur: Kenali tanda dini, tindakan saat kejadian, dan langkah pasca-bencana.</p>
+        </div>
+
+        <!-- Mode Toggle Switcher -->
+        <div class="inline-flex p-1 rounded-xl bg-slate-900 border border-slate-800 self-start sm:self-auto shadow-inner">
+          <button id="viewModeFull" class="px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all bg-amber-500 text-slate-950 shadow-sm flex items-center gap-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+            Panduan Lengkap
+          </button>
+          <button id="viewModeChecklist" class="px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all text-slate-400 hover:text-slate-200 flex items-center gap-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            Checklist Tindakan Cepat
+          </button>
+        </div>
+      </div>
+
+      <!-- DISASTER PANELS CONTAINER -->
+      <div id="disasterPanels">
+
+        <!-- 1. GEMPA BUMI -->
+        <div class="disaster-panel" id="panel-gempa" data-disaster="gempa">
+          <!-- Panel Header Banner -->
+          <div class="p-6 rounded-2xl bg-gradient-to-r from-amber-950/70 via-slate-900 to-slate-900 border-2 border-amber-600/60 mb-6 shadow-xl relative overflow-hidden">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="flex items-start sm:items-center gap-4">
+                <span class="text-4xl p-3 bg-amber-500/20 rounded-2xl border border-amber-500/40 text-amber-400">🏚️</span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-white">Gempa Bumi</h3>
+                    <span class="px-2 py-0.5 rounded text-xs font-bold bg-amber-500/20 text-amber-400 border border-amber-500/30">Mendadak</span>
+                  </div>
+                  <p class="text-slate-300 text-sm mt-1 max-w-2xl">
+                    Gempa bumi terjadi seketika tanpa peringatan dini awal. Prioritas utama adalah melindungi kepala, leher, dan menjauhi reruntuhan.
+                  </p>
+                </div>
+              </div>
+              <a href="tel:085142847902" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs sm:text-sm whitespace-nowrap shadow transition-transform active:scale-95">
+                📞 Laporkan ke BPBD
+              </a>
+            </div>
+          </div>
+
+          <!-- 3 Columns for Stages -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <!-- Phase 1: Kenali Tanda -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 hover:border-amber-500/40 transition-colors shadow-md flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-2.5 pb-3 border-b border-slate-800 mb-4">
+                  <span class="w-7 h-7 rounded-lg bg-amber-500/20 text-amber-400 font-bold flex items-center justify-center text-xs">1</span>
+                  <h4 class="font-display font-bold text-lg text-white">Kenali Tanda Dini</h4>
+                </div>
+                <ul class="space-y-3 text-sm text-slate-300">
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-amber-400 mt-1 font-bold">▪</span>
+                    <span>Tanah bergetar, lampu dan benda gantung bergoyang kuat, serta terdengar suara gemuruh bawah tanah.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-amber-400 mt-1 font-bold">▪</span>
+                    <span>Pemberitahuan darurat aplikasi InfoBMKG, pengeras suara masjid/desa, atau pukulan kentongan bertalu-talu.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-amber-400 mt-1 font-bold">▪</span>
+                    <span><strong class="text-amber-300">Peringatan Pesisir:</strong> Jika guncangan berlangsung lebih dari 20 detik atau air laut surut tiba-tiba, segera lari ke tempat tinggi (potensi tsunami).</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-4 pt-3 border-t border-slate-800/80 text-xs text-slate-400 flex items-center gap-1.5">
+                <span>⏱️ Waktu respon: <strong>0 - 5 Detik Pertama</strong></span>
+              </div>
+            </div>
+
+            <!-- Phase 2: Saat Kejadian -->
+            <div class="bg-slate-900 border-2 border-amber-500/50 rounded-2xl p-5 shadow-xl shadow-amber-950/20 flex flex-col justify-between relative">
+              <span class="absolute -top-3 right-4 px-2.5 py-0.5 rounded-full bg-amber-500 text-slate-950 text-[11px] font-extrabold uppercase tracking-wider">Tindakan Inti</span>
+              <div>
+                <div class="flex items-center gap-2.5 pb-3 border-b border-slate-800 mb-4">
+                  <span class="w-7 h-7 rounded-lg bg-amber-500 text-slate-950 font-bold flex items-center justify-center text-xs">2</span>
+                  <h4 class="font-display font-bold text-lg text-white">Saat Terjadi Guncangan</h4>
+                </div>
+                <ol class="space-y-3 text-sm text-slate-200">
+                  <li class="flex items-start gap-2.5">
+                    <span class="flex-shrink-0 w-5 h-5 rounded-full bg-amber-500/20 text-amber-300 font-bold flex items-center justify-center text-xs">A</span>
+                    <span><strong>Drop, Cover, Hold On:</strong> Rendahkan badan, lindungi kepala dan leher, bertahan di bawah meja kokoh.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="flex-shrink-0 w-5 h-5 rounded-full bg-amber-500/20 text-amber-300 font-bold flex items-center justify-center text-xs">B</span>
+                    <span>Jauhi kaca jendela, cermin, lemari tinggi, dan lampu gantung.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="flex-shrink-0 w-5 h-5 rounded-full bg-amber-500/20 text-amber-300 font-bold flex items-center justify-center text-xs">C</span>
+                    <span><strong>Di luar ruangan:</strong> Bergerak ke tanah lapang, hindari tiang listrik, baliho, dan pepohonan besar.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="flex-shrink-0 w-5 h-5 rounded-full bg-amber-500/20 text-amber-300 font-bold flex items-center justify-center text-xs">D</span>
+                    <span><strong>Di kendaraan:</strong> Kurangi kecepatan bertahap, tepi di tempat terbuka, jangan keluar sampai guncangan reda.</span>
+                  </li>
+                </ol>
+              </div>
+              <div class="mt-4 pt-3 border-t border-slate-800/80 text-xs text-amber-300 font-medium">
+                ⚠️ Jangan gunakan lift atau tangga sempit saat getaran aktif!
+              </div>
+            </div>
+
+            <!-- Phase 3: Setelah Aman -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 hover:border-amber-500/40 transition-colors shadow-md flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-2.5 pb-3 border-b border-slate-800 mb-4">
+                  <span class="w-7 h-7 rounded-lg bg-amber-500/20 text-amber-400 font-bold flex items-center justify-center text-xs">3</span>
+                  <h4 class="font-display font-bold text-lg text-white">Setelah Guncangan Berhenti</h4>
+                </div>
+                <ol class="space-y-3 text-sm text-slate-300">
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-amber-400 font-mono font-bold">1.</span>
+                    <span>Keluar ruangan dengan tertib melalui jalur evakuasi menuju titik kumpul terbuka.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-amber-400 font-mono font-bold">2.</span>
+                    <span>Hitung anggota keluarga dan periksa apakah ada yang terluka atau tertinggal.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-amber-400 font-mono font-bold">3.</span>
+                    <span>Matikan sekering MCB listrik dan lepas regulator tabung gas jika aman dilakukan.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-amber-400 font-mono font-bold">4.</span>
+                    <span>Waspadai <strong class="text-white">gempa susulan</strong>. Jangan masuk ke dalam bangunan yang mengalami retak struktur.</span>
+                  </li>
+                </ol>
+              </div>
+              <div class="mt-4 pt-3 border-t border-slate-800/80 text-xs text-slate-400">
+                📍 Berkumpul di lapangan desa / area terbuka Tobadak
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. BANJIR LUAPAN -->
+        <div class="disaster-panel hidden" id="panel-banjir" data-disaster="banjir">
+          <div class="p-6 rounded-2xl bg-gradient-to-r from-sky-950/70 via-slate-900 to-slate-900 border-2 border-sky-600/60 mb-6 shadow-xl relative overflow-hidden">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="flex items-start sm:items-center gap-4">
+                <span class="text-4xl p-3 bg-sky-500/20 rounded-2xl border border-sky-500/40 text-sky-400">🌊</span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-white">Banjir Luapan</h3>
+                    <span class="px-2 py-0.5 rounded text-xs font-bold bg-sky-500/20 text-sky-400 border border-sky-500/30">Bisa Dipantau</span>
+                  </div>
+                  <p class="text-slate-300 text-sm mt-1 max-w-2xl">
+                    Banjir biasanya didahului kenaikan debit air. Waktu paling aman untuk mengevakuasi keluarga adalah <strong class="text-sky-300">sebelum air memasuki rumah</strong>.
+                  </p>
+                </div>
+              </div>
+              <a href="tel:085142847902" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-xs sm:text-sm whitespace-nowrap shadow transition-transform active:scale-95">
+                📞 Hubungi Satgas Banjir
+              </a>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <!-- Phase 1 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 hover:border-sky-500/40 transition-colors shadow-md flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-2.5 pb-3 border-b border-slate-800 mb-4">
+                  <span class="w-7 h-7 rounded-lg bg-sky-500/20 text-sky-400 font-bold flex items-center justify-center text-xs">1</span>
+                  <h4 class="font-display font-bold text-lg text-white">Kenali Tanda Dini</h4>
+                </div>
+                <ul class="space-y-3 text-sm text-slate-300">
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-sky-400 mt-1 font-bold">▪</span>
+                    <span>Curah hujan deras terus-menerus selama berjam-jam di kawasan hulu maupun di wilayah Tobadak.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-sky-400 mt-1 font-bold">▪</span>
+                    <span>Air sungai meluap cepat, berwarna keruh pekat cokelat, dan membawa sampah kayu atau ranting.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-sky-400 mt-1 font-bold">▪</span>
+                    <span>Instruksi waspada dari aparat desa/Dusun dan pengumuman peringatan dini debit air dari BPBD.</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-4 pt-3 border-t border-slate-800/80 text-xs text-sky-300">
+                🌊 Pantau saluran air &amp; pintu air sekitar rumah
+              </div>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="bg-slate-900 border-2 border-sky-500/50 rounded-2xl p-5 shadow-xl shadow-sky-950/20 flex flex-col justify-between relative">
+              <span class="absolute -top-3 right-4 px-2.5 py-0.5 rounded-full bg-sky-500 text-slate-950 text-[11px] font-extrabold uppercase tracking-wider">Evakuasi Cepat</span>
+              <div>
+                <div class="flex items-center gap-2.5 pb-3 border-b border-slate-800 mb-4">
+                  <span class="w-7 h-7 rounded-lg bg-sky-500 text-slate-950 font-bold flex items-center justify-center text-xs">2</span>
+                  <h4 class="font-display font-bold text-lg text-white">Saat Air Mulai Naik</h4>
+                </div>
+                <ol class="space-y-3 text-sm text-slate-200">
+                  <li class="flex items-start gap-2.5">
+                    <span class="flex-shrink-0 w-5 h-5 rounded-full bg-sky-500/20 text-sky-300 font-bold flex items-center justify-center text-xs">A</span>
+                    <span><strong>Matikan MCB Listrik utama</strong> dan cabut seluruh colokan alat elektronik.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="flex-shrink-0 w-5 h-5 rounded-full bg-sky-500/20 text-sky-300 font-bold flex items-center justify-center text-xs">B</span>
+                    <span>Ambil <strong>Tas Siaga</strong> dan berkas penting kedap air, pindahkan perabot berharga ke rak tinggi.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="flex-shrink-0 w-5 h-5 rounded-full bg-sky-500/20 text-sky-300 font-bold flex items-center justify-center text-xs">C</span>
+                    <span>Utamakan mengevakuasi lansia, balita, ibu hamil, dan warga disabilitas ke tempat pengungsian aman.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="flex-shrink-0 w-5 h-5 rounded-full bg-sky-500/20 text-sky-300 font-bold flex items-center justify-center text-xs">D</span>
+                    <span><strong class="text-amber-300">BAHAYA:</strong> Jangan pernah menyeberangi arus air deras atau menyentuh tiang kabel listrik!</span>
+                  </li>
+                </ol>
+              </div>
+              <div class="mt-4 pt-3 border-t border-slate-800/80 text-xs text-sky-300 font-medium">
+                ⚡ Arus 15 cm air berarus deras mampu menjatuhkan orang dewasa.
+              </div>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 hover:border-sky-500/40 transition-colors shadow-md flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-2.5 pb-3 border-b border-slate-800 mb-4">
+                  <span class="w-7 h-7 rounded-lg bg-sky-500/20 text-sky-400 font-bold flex items-center justify-center text-xs">3</span>
+                  <h4 class="font-display font-bold text-lg text-white">Setelah Air Surut</h4>
+                </div>
+                <ol class="space-y-3 text-sm text-slate-300">
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-sky-400 font-mono font-bold">1.</span>
+                    <span>Kembali ke rumah hanya setelah ada pernyataan resmi aman dari pemerintah desa / BPBD.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-sky-400 font-mono font-bold">2.</span>
+                    <span>Pastikan instalasi listrik benar-benar kering sebelum menyalakan saklar kembali.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-sky-400 font-mono font-bold">3.</span>
+                    <span>Rebus air hingga mendidih matang sempurna; jangan minum air sumur yang tercemar banjir.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-sky-400 font-mono font-bold">4.</span>
+                    <span>Gunakan sepatu bot dan sarung tangan saat membersihkan lumpur untuk menghindari leptospirosis dan sengatan binatang.</span>
+                  </li>
+                </ol>
+              </div>
+              <div class="mt-4 pt-3 border-t border-slate-800/80 text-xs text-slate-400">
+                🧼 Desinfeksi lantai &amp; peralatan makan pascabanjir
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. TANAH LONGSOR -->
+        <div class="disaster-panel hidden" id="panel-longsor" data-disaster="longsor">
+          <div class="p-6 rounded-2xl bg-gradient-to-r from-amber-950/70 via-slate-900 to-slate-900 border-2 border-amber-700/60 mb-6 shadow-xl relative overflow-hidden">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="flex items-start sm:items-center gap-4">
+                <span class="text-4xl p-3 bg-amber-800/30 rounded-2xl border border-amber-700/40 text-amber-500">⛰️</span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-white">Tanah Longsor</h3>
+                    <span class="px-2 py-0.5 rounded text-xs font-bold bg-amber-800/30 text-amber-400 border border-amber-700/40">Area Lereng &amp; Tebing</span>
+                  </div>
+                  <p class="text-slate-300 text-sm mt-1 max-w-2xl">
+                    Longsor bergerak dengan kecepatan sangat tinggi. Jika tanda retakan atau rembesan keruh muncul saat hujan, <strong class="text-amber-400">jangan menunggu longsor terjadi, segera mengungsi</strong>.
+                  </p>
+                </div>
+              </div>
+              <a href="tel:085142847902" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-bold text-xs sm:text-sm whitespace-nowrap shadow transition-transform active:scale-95">
+                📞 Laporkan Retakan Tanah
+              </a>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <!-- Phase 1 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 hover:border-amber-600/40 transition-colors shadow-md flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-2.5 pb-3 border-b border-slate-800 mb-4">
+                  <span class="w-7 h-7 rounded-lg bg-amber-800/30 text-amber-400 font-bold flex items-center justify-center text-xs">1</span>
+                  <h4 class="font-display font-bold text-lg text-white">Kenali Tanda Dini</h4>
+                </div>
+                <ul class="space-y-3 text-sm text-slate-300">
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-amber-500 mt-1 font-bold">▪</span>
+                    <span>Hujan lebat berhari-hari pada lereng perbukitan dan bantaran sungai desa.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-amber-500 mt-1 font-bold">▪</span>
+                    <span>Muncul retakan baru di tanah, dinding rumah, atau aspal jalan; pohon dan tiang pagar mulai condong miring.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-amber-500 mt-1 font-bold">▪</span>
+                    <span>Mata air atau sumur mendadak keruh berlumpur, atau muncul semburan rembesan air baru pada tebing.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-amber-500 mt-1 font-bold">▪</span>
+                    <span>Terdengar suara gemuruh batu atau patahan dahan dari arah atas perbukitan.</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-4 pt-3 border-t border-slate-800/80 text-xs text-amber-400">
+                🔍 Waspadai retakan tanah berbentuk tapal kuda
+              </div>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="bg-slate-900 border-2 border-amber-600/60 rounded-2xl p-5 shadow-xl shadow-amber-950/20 flex flex-col justify-between relative">
+              <span class="absolute -top-3 right-4 px-2.5 py-0.5 rounded-full bg-amber-600 text-white text-[11px] font-extrabold uppercase tracking-wider">Arah Lari Kritis</span>
+              <div>
+                <div class="flex items-center gap-2.5 pb-3 border-b border-slate-800 mb-4">
+                  <span class="w-7 h-7 rounded-lg bg-amber-600 text-white font-bold flex items-center justify-center text-xs">2</span>
+                  <h4 class="font-display font-bold text-lg text-white">Saat Terjadi Luncuran</h4>
+                </div>
+                <ol class="space-y-3 text-sm text-slate-200">
+                  <li class="flex items-start gap-2.5">
+                    <span class="flex-shrink-0 w-5 h-5 rounded-full bg-amber-800/40 text-amber-300 font-bold flex items-center justify-center text-xs">A</span>
+                    <span>Bunyikan kentongan atau teriak sekeras mungkin untuk memperingatkan tetangga di sekitar lereng.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="flex-shrink-0 w-5 h-5 rounded-full bg-amber-800/40 text-amber-300 font-bold flex items-center justify-center text-xs">B</span>
+                    <span><strong class="text-amber-300">LARI MENYAMPING:</strong> Segera lari tegak lurus ke samping dari arah luncuran tanah, bukan searah jalur lembah!</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="flex-shrink-0 w-5 h-5 rounded-full bg-amber-800/40 text-amber-300 font-bold flex items-center justify-center text-xs">C</span>
+                    <span>Tinggalkan harta benda, jangan berbalik ke dalam rumah demi mengambil barang.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="flex-shrink-0 w-5 h-5 rounded-full bg-amber-800/40 text-amber-300 font-bold flex items-center justify-center text-xs">D</span>
+                    <span>Tuju titik kumpul yang jauh dari dasar tebing dan bantaran aliran sungai.</span>
+                  </li>
+                </ol>
+              </div>
+              <div class="mt-4 pt-3 border-t border-slate-800/80 text-xs text-amber-300 font-medium">
+                🧭 Prinsip evakuasi longsor: Bergerak menyamping 90° dari arah datangnya tanah.
+              </div>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 hover:border-amber-600/40 transition-colors shadow-md flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-2.5 pb-3 border-b border-slate-800 mb-4">
+                  <span class="w-7 h-7 rounded-lg bg-amber-800/30 text-amber-400 font-bold flex items-center justify-center text-xs">3</span>
+                  <h4 class="font-display font-bold text-lg text-white">Setelah Kejadian</h4>
+                </div>
+                <ol class="space-y-3 text-sm text-slate-300">
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-amber-500 font-mono font-bold">1.</span>
+                    <span>Jauhi lokasi longsoran. Longsor susulan hampir selalu mengancam jika lereng belum stabil.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-amber-500 font-mono font-bold">2.</span>
+                    <span>Segera laporkan data warga tertimbun kepada petugas BPBD (<a href="tel:085142847902" class="underline text-amber-400 font-semibold">0851-4284-7902</a>) dan Kepala Dusun.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-amber-500 font-mono font-bold">3.</span>
+                    <span>Jangan menggali sendiri tumpukan tanah tanpa pengamanan dan instruksi tim SAR profesional.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-amber-500 font-mono font-bold">4.</span>
+                    <span>Jangan kembali ke rumah di bawah tebing hingga dinyatakan aman oleh geolog/BPBD.</span>
+                  </li>
+                </ol>
+              </div>
+              <div class="mt-4 pt-3 border-t border-slate-800/80 text-xs text-slate-400">
+                🛑 Batasi perimeter zona bahaya minimal 100 meter
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. KEBAKARAN -->
+        <div class="disaster-panel hidden" id="panel-api" data-disaster="api">
+          <div class="p-6 rounded-2xl bg-gradient-to-r from-red-950/70 via-slate-900 to-slate-900 border-2 border-red-600/60 mb-6 shadow-xl relative overflow-hidden">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="flex items-start sm:items-center gap-4">
+                <span class="text-4xl p-3 bg-red-500/20 rounded-2xl border border-red-500/40 text-red-400">🔥</span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-white">Kebakaran Pemukiman</h3>
+                    <span class="px-2 py-0.5 rounded text-xs font-bold bg-red-500/20 text-red-400 border border-red-500/30">Hitungan Menit</span>
+                  </div>
+                  <p class="text-slate-300 text-sm mt-1 max-w-2xl">
+                    Api dapat melahap ruangan hanya dalam 3 menit. Asap beracun lebih mematikan daripada jilatan api. <strong class="text-red-300">Keselamatan jiwa selalu nomor satu</strong>.
+                  </p>
+                </div>
+              </div>
+              <a href="tel:085342349683" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs sm:text-sm whitespace-nowrap shadow transition-transform active:scale-95">
+                📞 Telepon Damkar (0853-4234-9683)
+              </a>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <!-- Phase 1 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 hover:border-red-500/40 transition-colors shadow-md flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-2.5 pb-3 border-b border-slate-800 mb-4">
+                  <span class="w-7 h-7 rounded-lg bg-red-500/20 text-red-400 font-bold flex items-center justify-center text-xs">1</span>
+                  <h4 class="font-display font-bold text-lg text-white">Kenali Tanda Dini</h4>
+                </div>
+                <ul class="space-y-3 text-sm text-slate-300">
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-red-400 mt-1 font-bold">▪</span>
+                    <span>Bau kabel terbakar/gosong, percikan api pada stop kontak atau saklar listrik.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-red-400 mt-1 font-bold">▪</span>
+                    <span>Bau gas LPG menyengat di sekitar area dapur atau tabung gas regulator.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-red-400 mt-1 font-bold">▪</span>
+                    <span>Gumpalan asap hitam tebal dan teriakan peringatan dari tetangga.</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-4 pt-3 border-t border-slate-800/80 text-xs text-red-300">
+                🚨 Deteksi cepat mencegah api membesar
+              </div>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="bg-slate-900 border-2 border-red-500/60 rounded-2xl p-5 shadow-xl shadow-red-950/20 flex flex-col justify-between relative">
+              <span class="absolute -top-3 right-4 px-2.5 py-0.5 rounded-full bg-red-600 text-white text-[11px] font-extrabold uppercase tracking-wider">Aksi Cepat</span>
+              <div>
+                <div class="flex items-center gap-2.5 pb-3 border-b border-slate-800 mb-4">
+                  <span class="w-7 h-7 rounded-lg bg-red-600 text-white font-bold flex items-center justify-center text-xs">2</span>
+                  <h4 class="font-display font-bold text-lg text-white">Saat Terjadi Api</h4>
+                </div>
+                <ol class="space-y-3 text-sm text-slate-200">
+                  <li class="flex items-start gap-2.5">
+                    <span class="flex-shrink-0 w-5 h-5 rounded-full bg-red-500/20 text-red-300 font-bold flex items-center justify-center text-xs">A</span>
+                    <span>Segera teriak <strong class="text-white">“KEBAKARAN!”</strong>, bunyikan kentongan, dan hubungi Pemadam Kebakaran (<a href="tel:085342349683" class="underline text-red-400 font-semibold">0853-4234-9683</a>).</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="flex-shrink-0 w-5 h-5 rounded-full bg-red-500/20 text-red-300 font-bold flex items-center justify-center text-xs">B</span>
+                    <span><strong>Api kecil:</strong> Padamkan dengan APAR (Tarik, Arahkan, Tekan, Sapu) atau karung goni basah.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="flex-shrink-0 w-5 h-5 rounded-full bg-red-500/20 text-red-300 font-bold flex items-center justify-center text-xs">C</span>
+                    <span><strong>Api besar:</strong> Langsung keluar rumah, jangan coba memadamkan sendiri.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="flex-shrink-0 w-5 h-5 rounded-full bg-red-500/20 text-red-300 font-bold flex items-center justify-center text-xs">D</span>
+                    <span><strong>Bila ada asap pekat:</strong> Merunduk serendah mungkin dekat lantai dan tutup hidung-mulut dengan kain basah.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="flex-shrink-0 w-5 h-5 rounded-full bg-red-500/20 text-red-300 font-bold flex items-center justify-center text-xs">E</span>
+                    <span>Sentuh daun pintu dengan punggung tangan; bila terasa panas, jangan dibuka, cari pintu lain.</span>
+                  </li>
+                </ol>
+              </div>
+              <div class="mt-4 pt-3 border-t border-slate-800/80 text-xs text-amber-300 font-medium">
+                🔥 Baju terbakar? Jangan lari! Lakukan: Berhenti, Jatuhkan Diri, dan Berguling (Stop, Drop &amp; Roll).
+              </div>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 hover:border-red-500/40 transition-colors shadow-md flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-2.5 pb-3 border-b border-slate-800 mb-4">
+                  <span class="w-7 h-7 rounded-lg bg-red-500/20 text-red-400 font-bold flex items-center justify-center text-xs">3</span>
+                  <h4 class="font-display font-bold text-lg text-white">Setelah Aman di Luar</h4>
+                </div>
+                <ol class="space-y-3 text-sm text-slate-300">
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-red-400 font-mono font-bold">1.</span>
+                    <span>Berkumpul di titik kumpul aman dan hitung seluruh anggota keluarga secara lengkap.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-red-400 font-mono font-bold">2.</span>
+                    <span><strong>DILARANG MASUK KEMBALI:</strong> Jangan pernah masuk kembali ke dalam bangunan yang sedang atau baru terbakar.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-red-400 font-mono font-bold">3.</span>
+                    <span>Segera beri tahu petugas pemadam bila ada keluarga atau hewan yang masih terjebak di dalam.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-red-400 font-mono font-bold">4.</span>
+                    <span>Buka akses jalan desa selebar mungkin agar armada mobil pemadam kebakaran dapat leluasa masuk.</span>
+                  </li>
+                </ol>
+              </div>
+              <div class="mt-4 pt-3 border-t border-slate-800/80 text-xs text-slate-400">
+                🚒 Jaga jarak aman dari reruntuhan atap &amp; kaca pecah
+              </div>
+            </div>
+          </div>
+
+          <!-- SPECIAL WARNING: GAS LEAK -->
+          <div class="mt-5 p-4 rounded-xl bg-red-950/80 border-2 border-red-500 text-red-100 flex items-start gap-3 shadow-lg">
+            <span class="text-2xl flex-shrink-0">⚠️</span>
+            <div class="text-sm">
+              <strong class="font-display font-bold text-white text-base">PERINGATAN KHUSUS: BAU GAS MENYENGAT?</strong>
+              <p class="mt-0.5 text-red-200">
+                Jangan pernah menyalakan korek api, kompor, saklar lampu, atau mencabut steker listrik (percikan saklar memicu ledakan gas!). Segera lepaskan regulator tabung gas, buka seluruh pintu dan jendela lebar-lebar, lalu segera keluar dari rumah.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CHECKLIST TINDAKAN CEPAT (INTERACTIVE MODE) -->
+      <div id="quickChecklistSection" class="hidden mt-6 p-6 rounded-2xl bg-slate-900 border-2 border-amber-500/60 shadow-2xl">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-800">
+          <div>
+            <h3 class="font-display font-bold text-xl text-white flex items-center gap-2">
+              <span>📋</span> Checklist Tindakan Cepat Darurat
+              <span id="checklistBadge" class="text-xs px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">Gempa Bumi</span>
+            </h3>
+            <p class="text-xs text-slate-400 mt-1">Centang langkah yang telah Anda dan keluarga selesaikan untuk memantau keselamatan secara langsung.</p>
+          </div>
+          <button id="btnResetQuickChecklist" class="text-xs font-semibold text-slate-400 hover:text-amber-400 px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 hover:border-slate-600 transition-colors self-start sm:self-auto">
+            Reset Checklist
+          </button>
+        </div>
+
+        <div class="mt-4 space-y-2.5" id="quickChecklistItems">
+          <!-- Dynamically populated via JS -->
+        </div>
 
   <!-- BANJIR -->
   <div class="panel" id="banjir" data-h="banjir">
@@ -244,8 +1031,425 @@ footer a{color:#fff}
           <li>Pastikan air minum bersih; rebus atau gunakan air kemasan.</li>
           <li>Bersihkan rumah memakai sarung tangan dan alas kaki; waspadai penyakit pascabanjir.</li>
         </ol></div>
+        <div class="mt-5 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
+          <span id="quickChecklistProgress">0 dari 5 tindakan selesai</span>
+          <span class="text-amber-400 font-semibold" id="quickChecklistStatusText">Lakukan tindakan segera</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SECTION: TAS SIAGA & TITIK KUMPUL (INTERACTIVE CHECKLIST) -->
+    <section id="siaga" class="py-12 bg-slate-900/60 border-t border-b border-slate-800">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+          <!-- Left Column: Tas Siaga Bencana Checklist Tool -->
+          <div class="lg:col-span-7 bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-3 pb-4 border-b border-slate-800">
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-2xl">🎒</span>
+                    <h3 class="font-display font-bold text-xl text-white">Cek Kesiapan Tas Siaga (Go-Bag)</h3>
+                  </div>
+                  <p class="text-xs text-slate-400 mt-1">Simpan satu tas darurat tahan air per keluarga dekat pintu keluar utama.</p>
+                </div>
+                <div class="text-right">
+                  <div class="text-2xl font-display font-extrabold text-amber-400" id="bagPercentage">0%</div>
+                  <div class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Kesiapan</div>
+                </div>
+              </div>
+
+              <!-- Progress bar -->
+              <div class="mt-4 w-full bg-slate-800 rounded-full h-2.5 overflow-hidden">
+                <div id="bagProgressBar" class="bg-amber-500 h-2.5 rounded-full transition-all duration-300" style="width: 0%"></div>
+              </div>
+
+              <!-- Checklist Items Grid -->
+              <div class="mt-5 space-y-2.5" id="tasSiagaItems">
+                <label class="flex items-start gap-3 p-3 rounded-xl bg-slate-850 border border-slate-800 hover:border-slate-700 cursor-pointer transition-colors group">
+                  <input type="checkbox" data-bag-item="1" class="bag-checkbox mt-1 w-4 h-4 rounded text-amber-500 bg-slate-800 border-slate-700 focus:ring-amber-400 focus:ring-offset-slate-900">
+                  <div class="text-sm">
+                    <strong class="text-white group-hover:text-amber-300 transition-colors">Salinan Dokumen Berharga</strong>
+                    <p class="text-xs text-slate-400 mt-0.5">Salinan KK, KTP, Akta, Sertifikat tanah dalam amplop plastik kedap air (ziplock).</p>
+                  </div>
+                </label>
+
+                <label class="flex items-start gap-3 p-3 rounded-xl bg-slate-850 border border-slate-800 hover:border-slate-700 cursor-pointer transition-colors group">
+                  <input type="checkbox" data-bag-item="2" class="bag-checkbox mt-1 w-4 h-4 rounded text-amber-500 bg-slate-800 border-slate-700 focus:ring-amber-400 focus:ring-offset-slate-900">
+                  <div class="text-sm">
+                    <strong class="text-white group-hover:text-amber-300 transition-colors">Air Minum &amp; Pangan Darurat 3 Hari</strong>
+                    <p class="text-xs text-slate-400 mt-0.5">Air mineral botol dan biskuit/makanan siap saji tahan lama untuk seluruh anggota keluarga.</p>
+                  </div>
+                </label>
+
+                <label class="flex items-start gap-3 p-3 rounded-xl bg-slate-850 border border-slate-800 hover:border-slate-700 cursor-pointer transition-colors group">
+                  <input type="checkbox" data-bag-item="3" class="bag-checkbox mt-1 w-4 h-4 rounded text-amber-500 bg-slate-800 border-slate-700 focus:ring-amber-400 focus:ring-offset-slate-900">
+                  <div class="text-sm">
+                    <strong class="text-white group-hover:text-amber-300 transition-colors">Senter, Peluit Darurat &amp; Baterai Cadangan</strong>
+                    <p class="text-xs text-slate-400 mt-0.5">Peluit berfungsi memanggil tim penolong ketika tertimpa reruntuhan tanpa menghabiskan suara.</p>
+                  </div>
+                </label>
+
+                <label class="flex items-start gap-3 p-3 rounded-xl bg-slate-850 border border-slate-800 hover:border-slate-700 cursor-pointer transition-colors group">
+                  <input type="checkbox" data-bag-item="4" class="bag-checkbox mt-1 w-4 h-4 rounded text-amber-500 bg-slate-800 border-slate-700 focus:ring-amber-400 focus:ring-offset-slate-900">
+                  <div class="text-sm">
+                    <strong class="text-white group-hover:text-amber-300 transition-colors">Kotak P3K &amp; Obat Khusus Rutin</strong>
+                    <p class="text-xs text-slate-400 mt-0.5">Pereda nyeri, antiseptik, perban, plester, dan obat resep rutin untuk anggota keluarga yang sakit.</p>
+                  </div>
+                </label>
+
+                <label class="flex items-start gap-3 p-3 rounded-xl bg-slate-850 border border-slate-800 hover:border-slate-700 cursor-pointer transition-colors group">
+                  <input type="checkbox" data-bag-item="5" class="bag-checkbox mt-1 w-4 h-4 rounded text-amber-500 bg-slate-800 border-slate-700 focus:ring-amber-400 focus:ring-offset-slate-900">
+                  <div class="text-sm">
+                    <strong class="text-white group-hover:text-amber-300 transition-colors">Power Bank Terisi Penuh &amp; Uang Tunai</strong>
+                    <p class="text-xs text-slate-400 mt-0.5">Saat listrik padam, ATM mati dan daya HP sangat berharga untuk komunikasi darurat.</p>
+                  </div>
+                </label>
+
+                <label class="flex items-start gap-3 p-3 rounded-xl bg-slate-850 border border-slate-800 hover:border-slate-700 cursor-pointer transition-colors group">
+                  <input type="checkbox" data-bag-item="6" class="bag-checkbox mt-1 w-4 h-4 rounded text-amber-500 bg-slate-800 border-slate-700 focus:ring-amber-400 focus:ring-offset-slate-900">
+                  <div class="text-sm">
+                    <strong class="text-white group-hover:text-amber-300 transition-colors">Pakaian Ganti, Jas Hujan &amp; Selimut Hangat</strong>
+                    <p class="text-xs text-slate-400 mt-0.5">Perlindungan dari cuaca dingin dan hujan lebat di posko pengungsian sementara.</p>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Footer actions -->
+            <div class="mt-5 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
+              <span id="bagCountText">0 dari 6 barang dicentang</span>
+              <button id="btnResetBag" class="text-slate-400 hover:text-amber-400 transition-colors font-medium">
+                Kosongkan Pilihan
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Column: Titik Kumpul & Alur Evakuasi Desa Tobadak -->
+          <div class="lg:col-span-5 space-y-6">
+
+            <!-- Card 1: Titik Kumpul -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
+              <div class="flex items-center gap-3 pb-3 border-b border-slate-800">
+                <span class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center text-lg font-bold">📍</span>
+                <div>
+                  <h3 class="font-display font-bold text-lg text-white">Titik Kumpul &amp; Evakuasi</h3>
+                  <p class="text-xs text-slate-400">Pemerintah Desa Tobadak</p>
+                </div>
+              </div>
+              <ul class="mt-4 space-y-3 text-sm text-slate-300">
+                <li class="flex items-start gap-2.5">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span><strong>Ketahui Titik Terdekat:</strong> Konfirmasikan lokasi titik kumpul evakuasi terdekat dengan Kepala Dusun atau Ketua RT Anda di Tobadak.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span><strong>Simulasi Keluarga:</strong> Latih seluruh anggota keluarga menyusuri jalur evakuasi, termasuk saat kondisi gelap gulita tanpa lampu.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span><strong>Titik Temu Alternatif:</strong> Sepakati satu titik kumpul cadangan jika keluarga terpisah saat kepanikan terjadi.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span><strong>Aplikasi InfoBMKG:</strong> Pasang dan izinkan notifikasi darurat gempa di ponsel pintar keluarga Anda.</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Card 2: Interactive Kuis Kesiapan Keluarga (1-Minute Quiz) -->
+            <div class="bg-gradient-to-br from-slate-900 to-slate-950 border-2 border-amber-500/40 rounded-2xl p-6 shadow-xl relative overflow-hidden">
+              <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+                <div class="flex items-center gap-2">
+                  <span class="text-xl">🛡️</span>
+                  <h4 class="font-display font-bold text-base text-white">Cek Kesiapan Keluarga Anda</h4>
+                </div>
+                <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">Tes 1 Menit</span>
+              </div>
+
+              <div id="quizContainer" class="mt-4">
+                <p class="text-xs text-slate-300 mb-3" id="quizQuestionText">
+                  1. Apakah seluruh anggota keluarga Anda sudah mengetahui nomor telepon darurat BPBD Mamuju Tengah?
+                </p>
+                <div class="flex gap-2">
+                  <button type="button" data-quiz-ans="yes" class="quiz-btn flex-1 py-2 px-3 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-transform active:scale-95 shadow">
+                    Ya, Sudah Tahu
+                  </button>
+                  <button type="button" data-quiz-ans="no" class="quiz-btn flex-1 py-2 px-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs border border-slate-700 transition-transform active:scale-95">
+                    Belum Tahu
+                  </button>
+                </div>
+                <div class="mt-3 flex items-center justify-between text-[11px] text-slate-500">
+                  <span id="quizStepIndicator">Pertanyaan 1 dari 3</span>
+                  <span id="quizScorePreview">Skor: 0</span>
+                </div>
+              </div>
+
+              <!-- Quiz Result Box (Initially hidden) -->
+              <div id="quizResultBox" class="hidden mt-4 p-4 rounded-xl bg-slate-850 border border-amber-500/40 text-center">
+                <div class="text-2xl mb-1" id="quizResultIcon">🏆</div>
+                <h5 class="font-display font-bold text-base text-white" id="quizResultTitle">Keluarga Sangat Siaga!</h5>
+                <p class="text-xs text-slate-300 mt-1" id="quizResultDesc">Luar biasa, rumah tangga Anda memiliki kesadaran mitigasi bencana yang sangat baik.</p>
+                <button id="btnRestartQuiz" class="mt-3 text-xs text-amber-400 hover:underline font-semibold">Ulangi Tes Kesiapan</button>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: NOMOR DARURAT INTERAKTIF -->
+    <section id="kontak" class="py-12 sm:py-16 max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-8">
+        <div>
+          <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-white tracking-tight">
+            Nomor Kontak Tanggap Darurat
+          </h2>
+          <p class="text-sm text-slate-400 mt-1">
+            Ketuk untuk langsung melakukan panggilan telepon. Sebutkan: <strong class="text-slate-200">Nama, Dusun/RT di Tobadak, Jenis Kejadian, dan Jumlah Korban</strong>.
+          </p>
+        </div>
+        <div class="text-xs text-slate-400 bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-lg self-start sm:self-auto flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          <span>Bebas Pulsa / Layanan Darurat 24 Jam</span>
+        </div>
+      </div>
+
+      <!-- Emergency Contacts Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+
+        <!-- BPBD (Highlighted Primary) -->
+        <div class="bg-gradient-to-br from-red-950/80 to-slate-900 border-2 border-red-500/80 rounded-2xl p-5 shadow-xl relative overflow-hidden group hover:border-red-400 transition-all">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-extrabold uppercase tracking-wider px-2 py-0.5 rounded bg-red-600 text-white">Posko Induk</span>
+            <span class="text-2xl">🚨</span>
+          </div>
+          <h3 class="font-display font-bold text-lg text-white">BPBD Mamuju Tengah</h3>
+          <p class="text-xs text-slate-300 mt-0.5 mb-3">Penyelamatan banjir, gempa, tanah longsor &amp; evakuasi warga</p>
+          <div class="flex items-center gap-2">
+            <a href="tel:085142847902" class="flex-1 text-center py-2.5 px-3 rounded-xl bg-red-600 hover:bg-red-500 text-white font-mono font-extrabold text-base tracking-wide shadow-md transition-all active:scale-95 flex items-center justify-center gap-1.5">
+              <span>📞</span> 0851-4284-7902
+            </a>
+            <button data-copy="085142847902" class="copy-btn p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition-colors" title="Salin Nomor">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Pemadam Kebakaran -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-lg group hover:border-amber-500/50 transition-all">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 border border-amber-500/30">Damkar</span>
+            <span class="text-2xl">🚒</span>
+          </div>
+          <h3 class="font-display font-bold text-lg text-white">Pemadam Kebakaran</h3>
+          <p class="text-xs text-slate-400 mt-0.5 mb-3">Kebakaran rumah, ruko, lahan sawit &amp; evakuasi reptil</p>
+          <div class="flex items-center gap-2">
+            <a href="tel:085342349683" class="flex-1 text-center py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-slate-750 text-amber-400 font-mono font-bold text-base tracking-wide border border-slate-700 transition-all active:scale-95 flex items-center justify-center gap-1.5">
+              <span>📞</span> 0853-4234-9683
+            </a>
+            <button data-copy="085342349683" class="copy-btn p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition-colors" title="Salin Nomor">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Ambulans / Medis -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-lg group hover:border-sky-500/50 transition-all">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-sky-500/20 text-sky-400 border border-sky-500/30">Medis</span>
+            <span class="text-2xl">🚑</span>
+          </div>
+          <h3 class="font-display font-bold text-lg text-white">Layanan Ambulans</h3>
+          <p class="text-xs text-slate-400 mt-0.5 mb-3">Pertolongan pertama medis &amp; rujukan darurat RS</p>
+          <div class="flex items-center gap-2">
+            <a href="tel:119" class="flex-1 text-center py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-slate-750 text-sky-400 font-mono font-bold text-base tracking-wide border border-slate-700 transition-all active:scale-95 flex items-center justify-center gap-1.5">
+              <span>📞</span> Panggilan Cepat: 119
+            </a>
+            <button data-copy="119" class="copy-btn p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition-colors" title="Salin Nomor">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Kepolisian -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-lg group hover:border-slate-700 transition-all">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Polisi</span>
+            <span class="text-2xl">👮</span>
+          </div>
+          <h3 class="font-display font-bold text-lg text-white">Kepolisian Resor / Sektor</h3>
+          <p class="text-xs text-slate-400 mt-0.5 mb-3">Pengamanan wilayah &amp; ketertiban saat evakuasi</p>
+          <div class="flex items-center gap-2">
+            <a href="tel:110" class="flex-1 text-center py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-slate-750 text-slate-200 font-mono font-bold text-base tracking-wide border border-slate-700 transition-all active:scale-95 flex items-center justify-center gap-1.5">
+              <span>📞</span> Panggilan Cepat: 110
+            </a>
+            <button data-copy="110" class="copy-btn p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition-colors" title="Salin Nomor">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- PLN Gangguan Listrik -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-lg group hover:border-slate-700 transition-all">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Listrik</span>
+            <span class="text-2xl">⚡</span>
+          </div>
+          <h3 class="font-display font-bold text-lg text-white">Gangguan Listrik PLN</h3>
+          <p class="text-xs text-slate-400 mt-0.5 mb-3">Pemutusan tiang roboh, kabel putus &amp; trafo meledak</p>
+          <div class="flex items-center gap-2">
+            <a href="tel:123" class="flex-1 text-center py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-slate-750 text-amber-300 font-mono font-bold text-base tracking-wide border border-slate-700 transition-all active:scale-95 flex items-center justify-center gap-1.5">
+              <span>📞</span> 123 / 08122-123-123
+            </a>
+            <button data-copy="123" class="copy-btn p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition-colors" title="Salin Nomor">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Kantor Desa Tobadak -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-lg group hover:border-slate-700 transition-all">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Aparat Desa</span>
+            <span class="text-2xl">🏛️</span>
+          </div>
+          <h3 class="font-display font-bold text-lg text-white">Pemerintah Desa Tobadak</h3>
+          <p class="text-xs text-slate-400 mt-0.5 mb-3">Koordinasi posko pengungsian &amp; logistik warga</p>
+          <div class="flex items-center gap-2">
+            <a href="tel:082312274512" class="flex-1 text-center py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-slate-750 text-slate-200 font-mono font-bold text-base tracking-wide border border-slate-700 transition-all active:scale-95 flex items-center justify-center gap-1.5">
+              <span>📞</span> 0823-1227-4512
+            </a>
+            <button data-copy="082312274512" class="copy-btn p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition-colors" title="Salin Nomor">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Institutional Information Card -->
+      <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-emerald-400 font-bold">🏛️</span>
+            <h3 class="font-display font-bold text-lg text-white">Kantor Desa Tobadak</h3>
+          </div>
+          <p class="text-sm text-slate-300 mt-1">Kecamatan Tobadak, Kabupaten Mamuju Tengah, Sulawesi Barat</p>
+          <div class="mt-3 flex flex-wrap gap-x-6 gap-y-1 text-xs text-slate-400">
+            <span>Telepon: <a href="tel:082312274512" class="text-amber-400 hover:underline font-mono">0823-1227-4512</a></span>
+            <span>Email: <a href="mailto:dtobadak@gmail.com" class="text-amber-400 hover:underline font-mono">dtobadak@gmail.com</a></span>
+            <span>Layanan PPID: <span class="text-slate-300">Senin – Jum’at, 09:00 – 15:00 WITA</span></span>
+          </div>
+        </div>
+        <div class="flex-shrink-0">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 text-xs text-slate-400 border border-slate-700">
+            <span>ℹ️</span> Jam layanan PPID bukan untuk panggilan darurat
+          </span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SECTION: TANYA JAWAB UMUM (FAQ) INTERAKTIF -->
+    <section class="py-12 bg-slate-900/40 border-t border-slate-800">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-white tracking-tight mb-2 text-center">
+          Pertanyaan Umum Tanggap Darurat
+        </h2>
+        <p class="text-sm text-slate-400 text-center mb-8">Pedoman tambahan bagi warga dan relawan di lingkungan Desa Tobadak.</p>
+
+        <div class="space-y-3" id="faqAccordion">
+
+          <!-- FAQ Item 1 -->
+          <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden transition-all">
+            <button type="button" class="faq-toggle w-full p-4 text-left font-display font-bold text-sm sm:text-base text-white flex items-center justify-between gap-3 focus:outline-none">
+              <span>Bagaimana jika jaringan sinyal HP mati total saat bencana terjadi?</span>
+              <span class="faq-icon text-amber-400 text-xl font-mono transition-transform duration-200">+</span>
+            </button>
+            <div class="faq-answer hidden px-4 pb-4 text-sm text-slate-300 border-t border-slate-800/80 pt-3 leading-relaxed">
+              Jika sinyal seluler terputus, komunikasi darurat beralih ke sinyal suara tradisional: bunyikan kentongan titir secara berkesinambungan dan gunakan peluit dari tas siaga. Berkumpullah di titik kumpul dusun yang telah disepakati untuk berkoordinasi langsung dengan Kepala Dusun, Babinsa, dan Bhabinkamtibmas.
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden transition-all">
+            <button type="button" class="faq-toggle w-full p-4 text-left font-display font-bold text-sm sm:text-base text-white flex items-center justify-between gap-3 focus:outline-none">
+              <span>Mengapa harus lari menyamping (bukan ke lembah) saat tanah longsor?</span>
+              <span class="faq-icon text-amber-400 text-xl font-mono transition-transform duration-200">+</span>
+            </button>
+            <div class="faq-answer hidden px-4 pb-4 text-sm text-slate-300 border-t border-slate-800/80 pt-3 leading-relaxed">
+              Luncuran material longsoran mengikuti gaya gravitasi menuju dasar lembah dengan kecepatan mencapai puluhan kilometer per jam. Berlari ke arah lembah membuat Anda searah dengan lintasan longsor. Berlari tegak lurus (90 derajat) ke samping menjauhkan Anda dari koridor sapuan tanah dan batuan.
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden transition-all">
+            <button type="button" class="faq-toggle w-full p-4 text-left font-display font-bold text-sm sm:text-base text-white flex items-center justify-between gap-3 focus:outline-none">
+              <span>Bagaimana prosedur evakuasi untuk warga lansia dan anak-anak?</span>
+              <span class="faq-icon text-amber-400 text-xl font-mono transition-transform duration-200">+</span>
+            </button>
+            <div class="faq-answer hidden px-4 pb-4 text-sm text-slate-300 border-t border-slate-800/80 pt-3 leading-relaxed">
+              Prioritaskan anggota keluarga rentan (lansia, balita, ibu hamil, disabilitas) sejak tanda peringatan pertama terdengar, jangan menunggu air masuk atau longsor mendekat. Tetapkan satu orang dewasa dalam keluarga yang bertanggung jawab mendampingi mereka menuju tempat evakuasi.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 border-t border-slate-800/80 py-8 text-slate-400 text-xs sm:text-sm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div>
+        <p class="font-display font-bold text-slate-200 text-base">Pemerintah Desa Tobadak</p>
+        <p class="mt-0.5">Kecamatan Tobadak, Kabupaten Mamuju Tengah, Provinsi Sulawesi Barat</p>
+        <p class="text-xs text-slate-500 mt-2">
+          © <span id="currentYear">2026</span> Desa Tobadak. Panduan ini bersifat edukasi &amp; kesiapsiagaan umum. Selalu ikuti komando petugas BPBD &amp; SAR di lapangan.
+        </p>
+      </div>
+
+      <!-- Quick Action Buttons in Footer -->
+      <div class="flex items-center gap-3">
+        <a href="#panduan" class="px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 transition-colors">
+          ↑ Ke Atas
+        </a>
+        <a href="tel:085142847902" class="px-3.5 py-1.5 rounded-lg bg-red-600 hover:bg-red-500 text-white font-bold transition-colors">
+          📞 Darurat BPBD
+        </a>
+      </div>
     </div>
+  </footer>
+
+  <!-- MODAL 1: ALARM & KENTONGAN SYNTHESIZER (Web Audio API) -->
+  <div id="audioModal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-slate-900 border-2 border-amber-500/80 rounded-2xl max-w-md w-full p-6 shadow-2xl relative">
+      <button id="btnCloseAudioModal" class="absolute top-4 right-4 text-slate-400 hover:text-white p-1 rounded-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+      </button>
+
+      <div class="flex items-center gap-3 mb-4">
+        <span class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl">📢</span>
+        <div>
+          <h3 class="font-display font-bold text-lg text-white">Simulasi Sinyal Suara Bahaya</h3>
+          <p class="text-xs text-slate-400">Untuk latihan mandiri atau sinyal saat listrik padam</p>
   </div>
+        </div>
+      </div>
+
+      <p class="text-xs text-slate-300 leading-relaxed mb-5">
+        Gunakan simulator audio berbasis Web Audio API ini untuk latihan evakuasi warga atau menghasilkan nada kentongan/sirene peringatan darurat.
+      </p>
 
   <!-- LONGSOR -->
   <div class="panel" id="longsor" data-h="longsor">
@@ -273,6 +1477,29 @@ footer a{color:#fff}
           <li>Jangan menggali sendiri korban tertimbun tanpa arahan tim penyelamat.</li>
           <li>Jangan kembali ke rumah di bawah lereng sampai dinyatakan aman.</li>
         </ol></div>
+      <div class="space-y-3">
+        <!-- Kentongan Button -->
+        <button id="btnPlayKentongan" class="w-full py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-750 border border-amber-500/40 text-amber-300 font-display font-bold text-sm flex items-center justify-between transition-colors shadow">
+          <span class="flex items-center gap-2">
+            <span>🪵</span>
+            <span>Bunyikan Kentongan Titir (Bahaya)</span>
+          </span>
+          <span id="kentonganState" class="text-xs font-sans px-2 py-0.5 rounded bg-slate-700 text-slate-300">Mulai</span>
+        </button>
+
+        <!-- Sirene Button -->
+        <button id="btnPlaySiren" class="w-full py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-750 border border-red-500/40 text-red-300 font-display font-bold text-sm flex items-center justify-between transition-colors shadow">
+          <span class="flex items-center gap-2">
+            <span>🚨</span>
+            <span>Bunyikan Sirene Evakuasi Bencana</span>
+          </span>
+          <span id="sirenState" class="text-xs font-sans px-2 py-0.5 rounded bg-slate-700 text-slate-300">Mulai</span>
+        </button>
+      </div>
+
+      <div class="mt-5 pt-3 border-t border-slate-800 text-[11px] text-slate-400 text-center">
+        Suara dihasilkan secara instan dari peramban Anda tanpa membutuhkan kuota internet.
+      </div>
     </div>
   </div>
 
@@ -304,6 +1531,36 @@ footer a{color:#fff}
           <li>Beri jalan bagi mobil pemadam dan bantu mengatur warga.</li>
         </ol></div>
       <div class="warn" style="grid-column:1/-1"><b>Bau gas?</b> Jangan menyalakan api atau saklar listrik. Tutup regulator, buka jendela, lalu keluar.</div>
+  <!-- MODAL 2: GPS LOCATION SHARING -->
+  <div id="locationModal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-slate-900 border-2 border-sky-500/80 rounded-2xl max-w-md w-full p-6 shadow-2xl relative">
+      <button id="btnCloseLocationModal" class="absolute top-4 right-4 text-slate-400 hover:text-white p-1 rounded-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+      </button>
+
+      <div class="flex items-center gap-3 mb-4">
+        <span class="w-10 h-10 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-xl">📍</span>
+        <div>
+          <h3 class="font-display font-bold text-lg text-white">Bagikan Titik Koordinat GPS</h3>
+          <p class="text-xs text-slate-400">Bantu Tim Evakuasi menemukan lokasi Anda</p>
+        </div>
+      </div>
+
+      <div id="gpsStatusBox" class="p-4 rounded-xl bg-slate-850 border border-slate-800 text-xs text-slate-300 mb-4">
+        <p id="gpsStatusText">Tekan tombol di bawah untuk mendeteksi koordinat lintang dan bujur posisi Anda saat ini melalui sensor GPS perangkat.</p>
+        <div id="gpsCoordsDisplay" class="hidden mt-3 p-2.5 rounded bg-slate-900 border border-slate-700 font-mono text-xs text-amber-300 break-all"></div>
+      </div>
+
+      <div class="space-y-2.5">
+        <button id="btnFetchGps" class="w-full py-3 px-4 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-display font-bold text-sm shadow flex items-center justify-center gap-2 transition-transform active:scale-95">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          <span id="btnFetchGpsText">Dapatkan Titik Koordinat Saya</span>
+        </button>
+
+        <a id="btnShareWaGps" href="#" target="_blank" rel="noopener noreferrer" class="hidden w-full py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-display font-bold text-sm shadow flex items-center justify-center gap-2 transition-transform active:scale-95">
+          <span>💬</span> Kirim Pesan SOS WhatsApp ke BPBD
+        </a>
+      </div>
     </div>
   </div>
 </div>
@@ -353,6 +1610,11 @@ footer a{color:#fff}
     <p style="margin:8px 0 0">Telepon: <a href="tel:082312274512">082312274512</a><br>
     Email: <a href="mailto:dtobadak@gmail.com">dtobadak@gmail.com</a><br>
     Jam layanan PPID: Senin – Jum’at, 09:00 – 15:00 (bukan untuk keadaan darurat)</p>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toastNotification" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-slate-900 border-2 border-emerald-500 text-white px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2.5 text-xs sm:text-sm">
+    <span class="text-emerald-400 font-bold">✓</span>
+    <span id="toastMessage">Nomor berhasil disalin ke papan klip!</span>
   </div>
 </div>
 </section>
@@ -381,5 +1643,601 @@ footer a{color:#fff}
   show(location.hash.slice(1)||'gempa');
 })();
 </script>
+
+  <!-- JAVASCRIPT APPLICATION LOGIC -->
+  <script>
+    (function(){
+      // Set current year
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+      // State
+      let activeDisaster = 'gempa';
+      let activeViewMode = 'full'; // 'full' or 'checklist'
+
+      // DOM Elements
+      const tabBtns = document.querySelectorAll('.disaster-tab-btn');
+      const panels = document.querySelectorAll('.disaster-panel');
+      const searchInput = document.getElementById('searchInput');
+      const btnClearSearch = document.getElementById('btnClearSearch');
+      const searchMatchNotice = document.getElementById('searchMatchNotice');
+      const searchMatchCount = document.getElementById('searchMatchCount');
+      const viewModeFull = document.getElementById('viewModeFull');
+      const viewModeChecklist = document.getElementById('viewModeChecklist');
+      const quickChecklistSection = document.getElementById('quickChecklistSection');
+      const quickChecklistItems = document.getElementById('quickChecklistItems');
+      const checklistBadge = document.getElementById('checklistBadge');
+      const quickChecklistProgress = document.getElementById('quickChecklistProgress');
+      const quickChecklistStatusText = document.getElementById('quickChecklistStatusText');
+      const btnResetQuickChecklist = document.getElementById('btnResetQuickChecklist');
+
+      // 1. Disaster Switcher Function
+      const disasterThemes = {
+        gempa: { bg: 'bg-amber-950/40', border: 'border-amber-500', badgeBg: 'bg-amber-500', badgeText: 'text-slate-950' },
+        banjir: { bg: 'bg-sky-950/40', border: 'border-sky-500', badgeBg: 'bg-sky-500', badgeText: 'text-slate-950' },
+        longsor: { bg: 'bg-amber-950/40', border: 'border-amber-600', badgeBg: 'bg-amber-600', badgeText: 'text-white' },
+        api: { bg: 'bg-red-950/40', border: 'border-red-500', badgeBg: 'bg-red-500', badgeText: 'text-white' },
+      };
+
+      const disasterNames = {
+        gempa: 'Gempa Bumi',
+        banjir: 'Banjir Luapan',
+        longsor: 'Tanah Longsor',
+        api: 'Kebakaran Pemukiman'
+      };
+
+      const quickActionsData = {
+        gempa: [
+          'Jongkok, lindungi kepala dan leher di bawah meja kokoh (Drop, Cover, Hold On)',
+          'Jauhi jendela kaca, cermin besar, dan lemari tinggi yang berpotensi roboh',
+          'Tunggu hingga guncangan gempa benar-benar reda sebelum melangkah keluar',
+          'Matikan saklar sekering MCB listrik utama dan lepas regulator tabung gas',
+          'Evakuasi ke tanah lapang/titik kumpul terbuka dan waspadai gempa susulan'
+        ],
+        banjir: [
+          'Matikan saklar MCB listrik utama dan amankan barang elektronik berharga',
+          'Amankan Tas Siaga dan dokumen keluarga dalam wadah plastik kedap air',
+          'Bantu evakuasi kelompok rentan: lansia, anak-anak, dan warga sakit',
+          'Bergerak tertib menuju jalur evakuasi dan titik kumpul di dataran tinggi',
+          'Jangan menyeberang arus banjir deras atau mendekati tiang kabel listrik'
+        ],
+        longsor: [
+          'Pukul kentongan bertalu-talu atau teriak untuk memperingatkan tetangga',
+          'Lari menyamping 90° tegak lurus arah luncuran tanah (jangan ke lembah)',
+          'Segera tinggalkan rumah tanpa menunda untuk mengangkut barang berat',
+          'Jauhi area lereng dan bantaran sungai yang tersumbat timbunan longsor',
+          'Laporkan segera ke BPBD jika mencurigai ada warga yang tertimbun'
+        ],
+        api: [
+          'Teriak "KEBAKARAN!" sekeras mungkin dan segera hubungi Damkar (0853-4234-9683)',
+          'Jika api masih kecil, padamkan dengan APAR atau karung goni basah (TATS)',
+          'Jika api membesar, langsung selamatkan diri keluar ruangan tanpa melawan api',
+          'Merunduk di bawah kepulan asap tebal dan tutup hidung dengan kain basah',
+          'Berkumpul di titik kumpul aman dan jangan pernah masuk kembali ke dalam gedung'
+        ]
+      };
+
+      function switchDisaster(id, scrollToPanduan = false) {
+        if (!disasterThemes[id]) id = 'gempa';
+        activeDisaster = id;
+
+        // Update tabs styling
+        tabBtns.forEach(btn => {
+          const target = btn.getAttribute('data-target');
+          const indicator = btn.querySelector('.active-indicator');
+          if (target === id) {
+            btn.className = `disaster-tab-btn active text-left p-4 rounded-xl border-2 transition-all duration-200 relative overflow-hidden group focus:outline-none ${disasterThemes[id].bg} ${disasterThemes[id].border} text-white shadow-lg`;
+            if (indicator) {
+              indicator.className = `active-indicator text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded ${disasterThemes[id].badgeBg} ${disasterThemes[id].badgeText} font-sans`;
+              indicator.classList.remove('hidden');
+            }
+          } else {
+            btn.className = 'disaster-tab-btn text-left p-4 rounded-xl border-2 transition-all duration-200 relative overflow-hidden group focus:outline-none bg-slate-900 border-slate-800 text-slate-300 hover:bg-slate-850';
+            if (indicator) indicator.classList.add('hidden');
+          }
+        });
+
+        // Show corresponding panel
+        panels.forEach(panel => {
+          if (panel.getAttribute('data-disaster') === id) {
+            panel.classList.remove('hidden');
+          } else {
+            panel.classList.add('hidden');
+          }
+        });
+
+        // Update Quick Checklist
+        renderQuickChecklist();
+
+        if (scrollToPanduan) {
+          const targetEl = document.getElementById('panduan');
+          if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', function(){
+          const target = this.getAttribute('data-target');
+          switchDisaster(target, true);
+        });
+      });
+
+      // 2. View Mode Toggle (Panduan Lengkap vs Checklist Tindakan)
+      viewModeFull.addEventListener('click', () => {
+        activeViewMode = 'full';
+        viewModeFull.className = 'px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all bg-amber-500 text-slate-950 shadow-sm flex items-center gap-1.5';
+        viewModeChecklist.className = 'px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all text-slate-400 hover:text-slate-200 flex items-center gap-1.5';
+        document.getElementById('disasterPanels').classList.remove('hidden');
+        quickChecklistSection.classList.add('hidden');
+      });
+
+      viewModeChecklist.addEventListener('click', () => {
+        activeViewMode = 'checklist';
+        viewModeChecklist.className = 'px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all bg-amber-500 text-slate-950 shadow-sm flex items-center gap-1.5';
+        viewModeFull.className = 'px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all text-slate-400 hover:text-slate-200 flex items-center gap-1.5';
+        document.getElementById('disasterPanels').classList.add('hidden');
+        quickChecklistSection.classList.remove('hidden');
+      });
+
+      // Quick Checklist Rendering & State
+      function renderQuickChecklist() {
+        checklistBadge.textContent = disasterNames[activeDisaster];
+        const steps = quickActionsData[activeDisaster] || [];
+        quickChecklistItems.innerHTML = '';
+
+        steps.forEach((stepText, idx) => {
+          const itemKey = `quick_action_${activeDisaster}_${idx}`;
+          const isChecked = localStorage.getItem(itemKey) === 'true';
+
+          const label = document.createElement('label');
+          label.className = `flex items-start gap-3 p-3.5 rounded-xl border cursor-pointer transition-all ${
+            isChecked ? 'bg-emerald-950/30 border-emerald-500/50 text-emerald-200' : 'bg-slate-850 border-slate-800 hover:border-slate-700 text-slate-200'
+          }`;
+
+          label.innerHTML = `
+            <input type="checkbox" data-quick-idx="${idx}" class="quick-chk mt-1 w-4 h-4 rounded text-emerald-500 bg-slate-800 border-slate-700 focus:ring-emerald-400 focus:ring-offset-slate-900" ${isChecked ? 'checked' : ''}>
+            <div class="text-sm">
+              <span class="font-bold text-xs uppercase px-1.5 py-0.5 rounded ${isChecked ? 'bg-emerald-500/20 text-emerald-300' : 'bg-slate-800 text-slate-400'} mr-1.5">Langkah ${idx + 1}</span>
+              <span class="${isChecked ? 'line-through text-slate-400' : 'text-slate-100 font-medium'}">${stepText}</span>
+            </div>
+          `;
+
+          const checkbox = label.querySelector('.quick-chk');
+          checkbox.addEventListener('change', function(){
+            localStorage.setItem(itemKey, this.checked ? 'true' : 'false');
+            renderQuickChecklist();
+          });
+
+          quickChecklistItems.appendChild(label);
+        });
+
+        updateQuickChecklistProgress();
+      }
+
+      function updateQuickChecklistProgress() {
+        const steps = quickActionsData[activeDisaster] || [];
+        let checkedCount = 0;
+        steps.forEach((_, idx) => {
+          if (localStorage.getItem(`quick_action_${activeDisaster}_${idx}`) === 'true') checkedCount++;
+        });
+
+        quickChecklistProgress.textContent = `${checkedCount} dari ${steps.length} tindakan selesai`;
+        if (checkedCount === steps.length && steps.length > 0) {
+          quickChecklistStatusText.textContent = 'Semua tindakan keselamatan telah dieksekusi!';
+          quickChecklistStatusText.className = 'text-emerald-400 font-bold';
+        } else {
+          quickChecklistStatusText.textContent = 'Lakukan tindakan secepatnya';
+          quickChecklistStatusText.className = 'text-amber-400 font-semibold';
+        }
+      }
+
+      btnResetQuickChecklist.addEventListener('click', () => {
+        const steps = quickActionsData[activeDisaster] || [];
+        steps.forEach((_, idx) => {
+          localStorage.removeItem(`quick_action_${activeDisaster}_${idx}`);
+        });
+        renderQuickChecklist();
+        showToast('Checklist tindakan darurat berhasil direset.');
+      });
+
+      // 3. Search / Filter Input
+      searchInput.addEventListener('input', function(){
+        const query = this.value.trim().toLowerCase();
+        if (query.length > 0) {
+          btnClearSearch.classList.remove('hidden');
+          searchMatchNotice.classList.remove('hidden');
+
+          let matchCount = 0;
+          panels.forEach(panel => {
+            const text = panel.textContent.toLowerCase();
+            if (text.includes(query)) {
+              panel.classList.remove('opacity-25');
+              matchCount++;
+            } else {
+              panel.classList.add('opacity-25');
+            }
+          });
+
+          searchMatchCount.textContent = `Pencarian untuk "${query}": ditemukan di panduan tanggap bencana.`;
+        } else {
+          clearSearch();
+        }
+      });
+
+      function clearSearch() {
+        searchInput.value = '';
+        btnClearSearch.classList.add('hidden');
+        searchMatchNotice.classList.add('hidden');
+        panels.forEach(panel => panel.classList.remove('opacity-25'));
+      }
+
+      btnClearSearch.addEventListener('click', clearSearch);
+
+      // 4. Tas Siaga Go-Bag Checklist Logic (persisted in localStorage)
+      const bagCheckboxes = document.querySelectorAll('.bag-checkbox');
+      const bagProgressBar = document.getElementById('bagProgressBar');
+      const bagPercentage = document.getElementById('bagPercentage');
+      const bagCountText = document.getElementById('bagCountText');
+      const btnResetBag = document.getElementById('btnResetBag');
+
+      function loadBagState() {
+        let count = 0;
+        bagCheckboxes.forEach(cb => {
+          const id = cb.getAttribute('data-bag-item');
+          const isChecked = localStorage.getItem(`bag_item_${id}`) === 'true';
+          cb.checked = isChecked;
+          if (isChecked) count++;
+        });
+        updateBagDisplay(count);
+      }
+
+      function updateBagDisplay(count) {
+        const total = bagCheckboxes.length;
+        const pct = Math.round((count / total) * 100);
+        bagProgressBar.style.width = `${pct}%`;
+        bagPercentage.textContent = `${pct}%`;
+        bagCountText.textContent = `${count} dari ${total} barang dicentang`;
+
+        if (pct >= 100) {
+          bagProgressBar.className = 'bg-emerald-500 h-2.5 rounded-full transition-all duration-300';
+          bagPercentage.className = 'text-2xl font-display font-extrabold text-emerald-400';
+        } else {
+          bagProgressBar.className = 'bg-amber-500 h-2.5 rounded-full transition-all duration-300';
+          bagPercentage.className = 'text-2xl font-display font-extrabold text-amber-400';
+        }
+      }
+
+      bagCheckboxes.forEach(cb => {
+        cb.addEventListener('change', function(){
+          const id = this.getAttribute('data-bag-item');
+          localStorage.setItem(`bag_item_${id}`, this.checked ? 'true' : 'false');
+          let count = 0;
+          bagCheckboxes.forEach(c => { if(c.checked) count++; });
+          updateBagDisplay(count);
+        });
+      });
+
+      btnResetBag.addEventListener('click', () => {
+        bagCheckboxes.forEach(cb => {
+          const id = cb.getAttribute('data-bag-item');
+          localStorage.removeItem(`bag_item_${id}`);
+          cb.checked = false;
+        });
+        updateBagDisplay(0);
+        showToast('Checklist Tas Siaga dikosongkan.');
+      });
+
+      loadBagState();
+
+      // 5. Interactive Kuis Kesiapan Keluarga
+      const quizQuestions = [
+        {
+          q: '1. Apakah seluruh anggota keluarga Anda sudah mengetahui nomor telepon darurat BPBD Mamuju Tengah (0851-4284-7902)?',
+        },
+        {
+          q: '2. Apakah dokumen penting (KK, KTP, akta) sudah disimpan dalam wadah plastik kedap air dekat pintu keluar?',
+        },
+        {
+          q: '3. Apakah keluarga Anda sudah menyepakati satu titik temu bila sewaktu-waktu terpisah saat evakuasi?',
+        }
+      ];
+
+      let currentQuizIdx = 0;
+      let quizScore = 0;
+
+      const quizContainer = document.getElementById('quizContainer');
+      const quizQuestionText = document.getElementById('quizQuestionText');
+      const quizStepIndicator = document.getElementById('quizStepIndicator');
+      const quizScorePreview = document.getElementById('quizScorePreview');
+      const quizResultBox = document.getElementById('quizResultBox');
+      const quizResultTitle = document.getElementById('quizResultTitle');
+      const quizResultDesc = document.getElementById('quizResultDesc');
+      const quizResultIcon = document.getElementById('quizResultIcon');
+      const btnRestartQuiz = document.getElementById('btnRestartQuiz');
+
+      document.querySelectorAll('.quiz-btn').forEach(btn => {
+        btn.addEventListener('click', function(){
+          const ans = this.getAttribute('data-quiz-ans');
+          if (ans === 'yes') quizScore++;
+
+          currentQuizIdx++;
+          if (currentQuizIdx < quizQuestions.length) {
+            quizQuestionText.textContent = quizQuestions[currentQuizIdx].q;
+            quizStepIndicator.textContent = `Pertanyaan ${currentQuizIdx + 1} dari ${quizQuestions.length}`;
+            quizScorePreview.textContent = `Skor: ${quizScore}`;
+          } else {
+            // Show result
+            quizContainer.classList.add('hidden');
+            quizResultBox.classList.remove('hidden');
+
+            if (quizScore === 3) {
+              quizResultIcon.textContent = '🛡️';
+              quizResultTitle.textContent = 'Keluarga Sangat Siaga! (Skor 3/3)';
+              quizResultDesc.textContent = 'Luar biasa! Rumah tangga Anda memiliki pemahaman mitigasi dan protokol darurat yang lengkap.';
+            } else if (quizScore === 2) {
+              quizResultIcon.textContent = '⚠️';
+              quizResultTitle.textContent = 'Cukup Siap, Tingkatkan Lagi (Skor 2/3)';
+              quizResultDesc.textContent = 'Bagus, lengkapi satu langkah tersisa (dokumen atau titik temu) agar perlindungan keluarga maksimal.';
+            } else {
+              quizResultIcon.textContent = '🚨';
+              quizResultTitle.textContent = 'Perlu Kesiapsiagaan Segera (Skor ' + quizScore + '/3)';
+              quizResultDesc.textContent = 'Jangan tunda! Segera catat nomor BPBD dan kemas dokumen penting ke dalam Tas Siaga hari ini juga.';
+            }
+          }
+        });
+      });
+
+      btnRestartQuiz.addEventListener('click', () => {
+        currentQuizIdx = 0;
+        quizScore = 0;
+        quizQuestionText.textContent = quizQuestions[0].q;
+        quizStepIndicator.textContent = `Pertanyaan 1 dari ${quizQuestions.length}`;
+        quizScorePreview.textContent = 'Skor: 0';
+        quizResultBox.classList.add('hidden');
+        quizContainer.classList.remove('hidden');
+      });
+
+      // 6. FAQ Accordion Toggle
+      document.querySelectorAll('.faq-toggle').forEach(btn => {
+        btn.addEventListener('click', function(){
+          const ans = this.nextElementSibling;
+          const icon = this.querySelector('.faq-icon');
+          const isHidden = ans.classList.contains('hidden');
+
+          document.querySelectorAll('.faq-answer').forEach(a => a.classList.add('hidden'));
+          document.querySelectorAll('.faq-icon').forEach(i => i.textContent = '+');
+
+          if (isHidden) {
+            ans.classList.remove('hidden');
+            icon.textContent = '−';
+          }
+        });
+      });
+
+      // 7. Clipboard Copy with Toast
+      const toast = document.getElementById('toastNotification');
+      const toastMsg = document.getElementById('toastMessage');
+      let toastTimer = null;
+
+      function showToast(msg) {
+        toastMsg.textContent = msg;
+        toast.classList.remove('translate-y-20', 'opacity-0');
+        toast.classList.add('translate-y-0', 'opacity-100');
+        if (toastTimer) clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => {
+          toast.classList.remove('translate-y-0', 'opacity-100');
+          toast.classList.add('translate-y-20', 'opacity-0');
+        }, 2800);
+      }
+
+      document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', function(){
+          const num = this.getAttribute('data-copy');
+          if (navigator.clipboard) {
+            navigator.clipboard.writeText(num).then(() => {
+              showToast(`Nomor ${num} disalin ke papan klip!`);
+            }).catch(() => {
+              showToast(`Nomor: ${num}`);
+            });
+          } else {
+            showToast(`Nomor: ${num}`);
+          }
+        });
+      });
+
+      // 8. Web Audio API Simulator (Kentongan Titir & Sirene Evakuasi)
+      let audioCtx = null;
+      let kentonganInterval = null;
+      let sirenOsc = null;
+      let sirenGain = null;
+      let sirenTimer = null;
+
+      function getAudioContext() {
+        if (!audioCtx) {
+          const AudioContext = window.AudioContext || window.webkitAudioContext;
+          if (AudioContext) audioCtx = new AudioContext();
+        }
+        if (audioCtx && audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+        return audioCtx;
+      }
+
+      // Wooden Slit Drum (Kentongan) Click Simulation
+      function playSingleKentonganStrike() {
+        const ctx = getAudioContext();
+        if (!ctx) return;
+
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+
+        // Kentongan woody acoustic tone: ~720Hz decaying quickly
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(740, ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(320, ctx.currentTime + 0.12);
+
+        gain.gain.setValueAtTime(0.7, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.14);
+
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+
+        osc.start(ctx.currentTime);
+        osc.stop(ctx.currentTime + 0.15);
+      }
+
+      const btnPlayKentongan = document.getElementById('btnPlayKentongan');
+      const kentonganState = document.getElementById('kentonganState');
+
+      btnPlayKentongan.addEventListener('click', () => {
+        if (kentonganInterval) {
+          clearInterval(kentonganInterval);
+          kentonganInterval = null;
+          kentonganState.textContent = 'Mulai';
+          kentonganState.className = 'text-xs font-sans px-2 py-0.5 rounded bg-slate-700 text-slate-300';
+        } else {
+          // Stop siren if active
+          stopSiren();
+          playSingleKentonganStrike();
+          // Rapid warning pattern: strike every 160ms (Titir Bahaya)
+          kentonganInterval = setInterval(playSingleKentonganStrike, 180);
+          kentonganState.textContent = 'Berhenti ⏸️';
+          kentonganState.className = 'text-xs font-sans px-2 py-0.5 rounded bg-amber-500 text-slate-950 font-bold';
+        }
+      });
+
+      // Evacuation Siren Simulation (Wailing alert)
+      const btnPlaySiren = document.getElementById('btnPlaySiren');
+      const sirenState = document.getElementById('sirenState');
+
+      function stopSiren() {
+        if (sirenTimer) {
+          clearInterval(sirenTimer);
+          sirenTimer = null;
+        }
+        if (sirenOsc) {
+          try { sirenOsc.stop(); sirenOsc.disconnect(); } catch(e){}
+          sirenOsc = null;
+        }
+        sirenState.textContent = 'Mulai';
+        sirenState.className = 'text-xs font-sans px-2 py-0.5 rounded bg-slate-700 text-slate-300';
+      }
+
+      function startSiren() {
+        const ctx = getAudioContext();
+        if (!ctx) return;
+
+        // Stop kentongan if active
+        if (kentonganInterval) {
+          clearInterval(kentonganInterval);
+          kentonganInterval = null;
+          kentonganState.textContent = 'Mulai';
+          kentonganState.className = 'text-xs font-sans px-2 py-0.5 rounded bg-slate-700 text-slate-300';
+        }
+
+        sirenOsc = ctx.createOscillator();
+        sirenGain = ctx.createGain();
+
+        sirenOsc.type = 'sawtooth';
+        sirenGain.gain.setValueAtTime(0.2, ctx.currentTime);
+
+        sirenOsc.connect(sirenGain);
+        sirenGain.connect(ctx.destination);
+        sirenOsc.start();
+
+        let goingUp = true;
+        sirenTimer = setInterval(() => {
+          if (!sirenOsc || !ctx) return;
+          const targetFreq = goingUp ? 880 : 440;
+          sirenOsc.frequency.linearRampToValueAtTime(targetFreq, ctx.currentTime + 0.6);
+          goingUp = !goingUp;
+        }, 650);
+
+        sirenState.textContent = 'Berhenti ⏸️';
+        sirenState.className = 'text-xs font-sans px-2 py-0.5 rounded bg-red-500 text-white font-bold';
+      }
+
+      btnPlaySiren.addEventListener('click', () => {
+        if (sirenOsc) {
+          stopSiren();
+        } else {
+          startSiren();
+        }
+      });
+
+      // Audio Modal Controls
+      const audioModal = document.getElementById('audioModal');
+      document.getElementById('btnOpenAudioModal').addEventListener('click', () => {
+        audioModal.classList.remove('hidden');
+      });
+      document.getElementById('btnCloseAudioModal').addEventListener('click', () => {
+        audioModal.classList.add('hidden');
+        if (kentonganInterval) { clearInterval(kentonganInterval); kentonganInterval = null; kentonganState.textContent = 'Mulai'; }
+        stopSiren();
+      });
+
+      // 9. GPS Coordinates Fetcher
+      const locationModal = document.getElementById('locationModal');
+      const btnOpenLocationModal = document.getElementById('btnOpenLocationModal');
+      const btnCloseLocationModal = document.getElementById('btnCloseLocationModal');
+      const btnFetchGps = document.getElementById('btnFetchGps');
+      const btnFetchGpsText = document.getElementById('btnFetchGpsText');
+      const gpsStatusText = document.getElementById('gpsStatusText');
+      const gpsCoordsDisplay = document.getElementById('gpsCoordsDisplay');
+      const btnShareWaGps = document.getElementById('btnShareWaGps');
+
+      btnOpenLocationModal.addEventListener('click', () => {
+        locationModal.classList.remove('hidden');
+      });
+      btnCloseLocationModal.addEventListener('click', () => {
+        locationModal.classList.add('hidden');
+      });
+
+      btnFetchGps.addEventListener('click', () => {
+        if (!navigator.geolocation) {
+          gpsStatusText.textContent = 'Sensor GPS tidak didukung pada peramban ini.';
+          return;
+        }
+
+        btnFetchGpsText.textContent = 'Sedang mencari koordinat GPS...';
+        btnFetchGps.disabled = true;
+
+        navigator.geolocation.getCurrentPosition(
+          pos => {
+            const lat = pos.coords.latitude.toFixed(6);
+            const lng = pos.coords.longitude.toFixed(6);
+            const acc = Math.round(pos.coords.accuracy);
+
+            gpsStatusText.textContent = `Koordinat GPS berhasil terdeteksi (Akurasi: ±${acc} meter).`;
+            gpsCoordsDisplay.classList.remove('hidden');
+            gpsCoordsDisplay.innerHTML = `Lintang: ${lat}<br>Bujur: ${lng}<br>Maps: <a href="https://maps.google.com/?q=${lat},${lng}" target="_blank" class="underline text-sky-400">Buka di Google Maps</a>`;
+
+            const waMessage = encodeURIComponent(
+              `DARURAT! Saya butuh bantuan evakuasi di Desa Tobadak, Mamuju Tengah. Titik koordinat GPS saya: https://maps.google.com/?q=${lat},${lng} (Akurasi ±${acc}m)`
+            );
+            btnShareWaGps.href = `https://wa.me/6285142847902?text=${waMessage}`;
+            btnShareWaGps.classList.remove('hidden');
+
+            btnFetchGpsText.textContent = 'Perbarui Titik GPS';
+            btnFetchGps.disabled = false;
+          },
+          err => {
+            btnFetchGpsText.textContent = 'Coba Lagi';
+            btnFetchGps.disabled = false;
+            gpsStatusText.textContent = 'Gagal membaca GPS: ' + (err.message || 'Izin lokasi tidak diberikan.');
+          },
+          { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+        );
+      });
+
+      // Handle direct hash navigation (#gempa, #banjir, #longsor, #api)
+      const initialHash = window.location.hash.replace('#', '');
+      if (['gempa', 'banjir', 'longsor', 'api'].includes(initialHash)) {
+        switchDisaster(initialHash);
+      } else {
+        switchDisaster('gempa');
+      }
+
+    })();
+  </script>
 </body>
 </html>
